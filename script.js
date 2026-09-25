@@ -35,6 +35,10 @@ if (subjectCards) {
   subjectCards.innerHTML = subjects.map((s) => `<button class="subject-card" data-subject-card="${s.name}"><span class="subject-icon ${s.color}">${s.icon}</span><h3>${s.name}</h3><p>${s.lessons} · ${s.note}</p><div class="bar"><i style="width:${s.progress}%"></i></div></button>`).join('');
 }
 
+// Fanlar, o‘yinlar va progress endi alohida ekranlarda chiqadi.
+// Bosh sahifada takroriy pastki bloklarni olib tashlaymiz.
+document.querySelectorAll('main#home > .section-block, main#home > .learning-panel').forEach((section) => section.remove());
+
 function pageHeader(label, title, text) { return `<div class="screen-header"><button class="back-button" data-route="home">← Bosh sahifa</button><p class="eyebrow">${label}</p><h1>${title}</h1><p>${text}</p></div>`; }
 function showPage(route, value = '') {
   if (!root || !app) return;
