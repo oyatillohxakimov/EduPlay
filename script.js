@@ -71,3 +71,4 @@ document.addEventListener('click', (event) => {
 document.getElementById('themeToggle')?.addEventListener('click', () => { document.body.classList.toggle('dark'); notify(document.body.classList.contains('dark') ? 'Tungi rejim yoqildi' : 'Yorug‘ rejim yoqildi'); });
 document.getElementById('closeGame')?.addEventListener('click', () => { const modal = document.getElementById('gameModal'); modal?.classList.remove('open'); modal?.setAttribute('aria-hidden', 'true'); });
 document.getElementById('gameModal')?.addEventListener('click', (event) => { if (event.target.id === 'gameModal') event.target.classList.remove('open'); });
+document.querySelectorAll('main#home > .section-block, main#home > .learning-panel').forEach((section) => section.remove());
